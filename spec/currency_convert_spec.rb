@@ -59,19 +59,19 @@ RSpec.describe CurrencyConvert do
     end
 
     it "should be able to add two types of currencies" do
-      expect(@fifty_eur + @twenty_dollars).to eq("72.20 EUR")
+      expect((@fifty_eur + @twenty_dollars).amount).to eq(Money.new(72.20, "EUR"))
     end
 
     it "should be able to subtract two types of currencies" do
-      expect(@fifty_eur - @twenty_dollars).to eq("27.80 EUR")
+      expect(@fifty_eur - @twenty_dollars).to eq(Money.new(27.80, "EUR"))
     end
 
     it "should be able to divide currency" do
-      expect(@fifty_eur / 2).to eq("25.00 EUR")
+      expect(@fifty_eur / 2).to eq(Money.new(25.00, "EUR"))
     end
 
     it "should be able to multiply currency" do
-      expect(@fifty_eur * 5).to eq("250.00 EUR")
+      expect(@fifty_eur * 5).to eq(Money.new(250.00, "EUR"))
     end
 
     it "should be able to compare two types of currencies" do

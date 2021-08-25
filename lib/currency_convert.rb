@@ -35,7 +35,7 @@ class Money
   end
 
   def amount
-    @amount
+    ('%.2f' % [(@amount.to_f * 100).round / 100.0]).to_f
   end
 
   def currency
@@ -88,7 +88,7 @@ class Money
   end
 
   def inspect_result(amount, currency)
-    ('%.2f' % [(amount.to_f * 100).round / 100.0]).to_s + " " + currency
+    Money.new(amount, currency)
   end
 
   def add_values(obj1, obj2)
